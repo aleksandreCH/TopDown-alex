@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     transform.position  = transform.position + new Vector3(horizontal, vertical) * Time.deltaTime * speed;
     
-    
+    Vector2
     
 }
 
