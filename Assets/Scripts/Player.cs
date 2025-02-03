@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 9.5f;
     [SerializeField] Camera camera;
 
+    [SerializeField] GameObject bulletPrefab;
+
+    [SerializeField] GameObject bulletapawnpoint;
+
     void Update()
     {
         Move();
@@ -13,7 +17,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Firing");
+            Instantiate(bulletPrefab, bulletapawnpoint.transform.position, transform.rotation);
         }
     }
 
