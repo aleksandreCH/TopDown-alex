@@ -12,8 +12,21 @@ public class Enemi : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        Destroy(gameObject);
+        hitCount = hitCount - 1;
         Destroy(col.gameObject);
+        if (hitCount == 0)
+        {
+            Destroy(gameObject);
+
+
+
+        }
+
+
+
+
+
+
     }
 
 
