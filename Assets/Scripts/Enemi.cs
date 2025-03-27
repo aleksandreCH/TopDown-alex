@@ -13,20 +13,11 @@ public class Enemi : MonoBehaviour
     {
 
         hitCount = hitCount - 1;
-        Destroy(col.gameObject);
+
         if (hitCount == 0)
         {
             Destroy(gameObject);
-
-
-
         }
-
-
-
-
-
-
     }
 
 

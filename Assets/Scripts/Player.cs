@@ -10,15 +10,50 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject bulletapawnpoint;
 
+    [SerializeField] GameObject secondbulletspownpoint;
+
+    [SerializeField] GameObject killerbulletPrefab;
+
+    float bulletFirerate;
+
+    [SerializeField] float bulletFireratedefault;
+    float killerbulletfirerate;
+
+    [SerializeField] float killerbulletfireratedefault;
+
+
     void Update()
     {
         Move();
         Turn();
 
-        if (Input.GetMouseButtonDown(0))
+        bulletFirerate -= 1 * Time.deltaTime;
+        if (bulletFirerate < 0 && Input.GetMouseButtonDown(0))
         {
             Instantiate(bulletPrefab, bulletapawnpoint.transform.position, transform.rotation);
+            Instantiate(bulletPrefab, secondbulletspownpoint.transform.position, transform.rotation);
+            bulletFirerate = bulletFireratedefault;
         }
+
+        killerbulletfirerate -= 1 * Time.deltaTime;
+
+
+        if (Input.GetMouseButtonDown(1) && killerbulletfirerate < 0)
+        {
+            Instantiate(killerbulletPrefab, secondbulletspownpoint.transform.position, transform.rotation);
+            Instantiate(killerbulletPrefab, bulletapawnpoint.transform.position, transform.rotation);
+            killerbulletfirerate = killerbulletfireratedefault;
+
+        }
+
+
+
+
+
+
+
+
+
     }
 
     void Move()
