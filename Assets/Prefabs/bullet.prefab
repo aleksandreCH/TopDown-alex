@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4537068003496453801}
   - component: {fileID: 7700521009074462796}
   - component: {fileID: 474008737609215686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4537068003496453801}
   bulletspeed: 20
+  damage: 50
+  DestoryOnContact: 0
 --- !u!61 &474008737609215686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +159,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

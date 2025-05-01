@@ -5,17 +5,33 @@ using UnityEngine;
 public class Enemi : MonoBehaviour
 
 {
-    [SerializeField] int hitCount = 3;
 
+    [SerializeField] float moveSpeed = 3f;
+    [SerializeField] int damage = 25;
+    Transform player;
 
-
-    void OnTriggerEnter2D(Collider2D col)
+    void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
-        hitCount = hitCount - 1;
+    void Update()
+    {
+        //// Move towards the player
+        Vector3 direction = (player.position - transform.position).normalized;
+        transform.position += direction * moveSpeed * Time.deltaTime;
 
-        if (hitCount == 0)
+        //// Rotate to face the player
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Player player = collision.GetComponent<Player>();
+
+        if (player)
         {
+            Debug.Log("Upss i died....");
             Destroy(gameObject);
         }
     }

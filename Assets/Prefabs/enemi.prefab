@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2322612297513265084}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7625354849070158077}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &7039388951640892409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2660072019456887347}
   - component: {fileID: 6076815651552931707}
   - component: {fileID: 8988580574595707377}
+  - component: {fileID: 1834021221862842531}
   m_Layer: 0
   m_Name: enemi
   m_TagString: Untagged
@@ -203,4 +204,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04ab8d3ed8ee4638b496dde5e96fbbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitCount: 3
+  moveSpeed: 3
+--- !u!114 &1834021221862842531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752348469866427816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5288fc76930634d6f8ec391f834ad6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

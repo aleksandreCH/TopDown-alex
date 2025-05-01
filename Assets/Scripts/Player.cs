@@ -45,25 +45,18 @@ public class Player : MonoBehaviour
             killerbulletfirerate = killerbulletfireratedefault;
 
         }
-
-
-
-
-
-
-
-
-
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("damejaxa enemy");
+    }
     void Move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         transform.position = transform.position + new Vector3(horizontal, vertical) * Time.deltaTime * speed;
     }
-
-
     void Turn()
     {
         Vector2 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1989996164732333140}
   - component: {fileID: 3659969221250740916}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8861514085430176477}
   - component: {fileID: 4537069644788775212}
   - component: {fileID: 6630467255479303143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: killer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,6 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4537069644788775212}
   bulletspeed: 20
+  damage: 50
+  DestoryOnContact: 0
 --- !u!50 &4537069644788775212
 Rigidbody2D:
   serializedVersion: 4
