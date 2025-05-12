@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public class Player : MonoBehaviour
 {
     [SerializeField] float speed = 9.5f;
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
     float killerbulletfirerate;
 
     [SerializeField] float killerbulletfireratedefault;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] int health;
 
 
     void Update()
@@ -49,7 +52,28 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("damejaxa enemy");
+        Enemi enemy = collision.GetComponent<Enemi>();
+
+        if (enemy)
+        {
+            health -= enemy.GetDamge();
+            healthText.text = "Health: " + health;
+
+            if (health < 200)
+            {
+                healthText.color = Color.yellow;
+            }
+
+            if (health <= 100)
+            {
+                healthText.color = Color.red;
+            }
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     void Move()
     {

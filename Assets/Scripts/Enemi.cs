@@ -34,8 +34,12 @@ public class Enemi : MonoBehaviour
             Debug.Log("Upss i died....");
             Destroy(gameObject);
         }
-    }
 
+    }
+    public int GetDamge()
+    {
+        return damage;
+    }
 
 
 
