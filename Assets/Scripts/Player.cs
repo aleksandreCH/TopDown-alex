@@ -23,8 +23,8 @@ public class Player : MonoBehaviour
     [SerializeField] float killerbulletfireratedefault;
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] int health;
-
-
+    [SerializeField] SceneLoader sceneLoader;
+    [SerializeField] AudioSource audioSource;
     void Update()
     {
         Move();
@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         bulletFirerate -= 1 * Time.deltaTime;
         if (bulletFirerate < 0 && Input.GetMouseButtonDown(0))
         {
+            audioSource.PlayOneShot(audioSource.clip);
             Instantiate(bulletPrefab, bulletapawnpoint.transform.position, transform.rotation);
             Instantiate(bulletPrefab, secondbulletspownpoint.transform.position, transform.rotation);
             bulletFirerate = bulletFireratedefault;
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            sceneLoader.LoadGameOverUI();
         }
     }
     void Move()
